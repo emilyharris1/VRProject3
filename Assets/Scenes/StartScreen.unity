@@ -1730,8 +1730,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Welcome to Creature Collector: an Underwater Odessy! To begin the game,
-    press both triggers.'
+  m_text: 'Welcome to Creature Collector: an Underwater Odessy! You are a marine
+    scientist trying to find and catalogue 6 different creatures. Use your joysticks
+    to rotate and move forward/back/left/right. Use your B and A buttons to move
+    up and down. Press your inner trigger on your right controller to open and close
+    your catalogue. The catalogue will give you information on each species you are
+    looking for as well as hints on where you can find them. When you locate a creature,
+    get close to it and press your right main trigger while pointing at it. I hope
+    you have fun and learn a lot. To begin the game, press both triggers.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1794,7 +1800,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -23.49287, y: 9.63047, z: 0, w: -11.432686}
+  m_margin: {x: -29.664158, y: 27.226076, z: -17.116306, w: -39.65501}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -1853,7 +1859,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002350641}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 30}
+  m_LocalPosition: {x: 0, y: 0, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1861,7 +1867,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: 1}
+  m_AnchoredPosition: {x: 5, y: 30}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2125832289

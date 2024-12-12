@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Audio;
 
 public class CatalogueScript : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class CatalogueScript : MonoBehaviour
     private bool catStatus = false;
     public float offset_amount = 100f;
     public InputActionReference triggerButtonPress;
+    public AudioClip creatureSplash;
 
     void Start()
     {
@@ -24,9 +26,10 @@ public class CatalogueScript : MonoBehaviour
     void DoRaycast(InputAction.CallbackContext _){
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, CreatureMask)){
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 2f, CreatureMask)){
             GameObject.Find("/CatGameObject/" + hit.transform.gameObject.name).GetComponent<MeshRenderer>().enabled = true;
             Destroy(hit.transform.gameObject);
+            GetComponent<AudioSource>().PlayOneShot(creatureSplash);
         }
 
     }
