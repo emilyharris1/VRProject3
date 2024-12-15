@@ -14,8 +14,8 @@ public class GameOver : MonoBehaviour
     void Update()
     {
         GameObject[] creaturesLeft = GameObject.FindGameObjectsWithTag("Creatures");
-        UnityEngine.Debug.Log(creaturesLeft.Length);
-        if (creaturesLeft.Length < 6 && !playedWin){
+        // UnityEngine.Debug.Log(creaturesLeft.Length);
+        if (creaturesLeft.Length < 1 && !playedWin){
             playedWin = true;
             StartCoroutine(winScreen());
         }
@@ -25,6 +25,6 @@ public class GameOver : MonoBehaviour
         yield return new WaitForSeconds(2);
         GetComponent<AudioSource>().PlayOneShot(winAudio);
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("WinScreen");
+        SceneManager.LoadScene("WinScreen1");
     }
 }

@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,29 +10,18 @@ public class CatalogueScript : MonoBehaviour
     public InputActionReference openCatalogue;
     public GameObject catalogue;
     public GameObject mainCamera;
-    public LayerMask CreatureMask;
+    // public LayerMask CreatureMask;
     private bool catStatus = false;
     public float offset_amount = 100f;
-    public InputActionReference triggerButtonPress;
+    // public InputActionReference triggerButtonPress;
     public AudioClip creatureSplash;
 
     void Start()
     {
-        triggerButtonPress.action.performed += DoRaycast;
+        // triggerButtonPress.action.performed += DoRaycast;
         openCatalogue.action.performed += ToggleCatalogue;
         catalogue.SetActive(true);
         // GameObject.Find("/CatGameObject/Clownfish").GetComponent<MeshRenderer>().enabled = true;
-    }
-
-    void DoRaycast(InputAction.CallbackContext _){
-        RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 2f, CreatureMask)){
-            GameObject.Find("/CatGameObject/" + hit.transform.gameObject.name).GetComponent<MeshRenderer>().enabled = true;
-            Destroy(hit.transform.gameObject);
-            GetComponent<AudioSource>().PlayOneShot(creatureSplash);
-        }
-
     }
 
     void ToggleCatalogue(InputAction.CallbackContext __){
@@ -43,6 +33,15 @@ public class CatalogueScript : MonoBehaviour
         // catalogue.SetActive(catStatus);
         if (!catStatus) {
             catalogue.transform.position = new Vector3(1000,-1000,1000);
+        }
+    }
+
+    void OnTriggerEnter(Collider creature) {
+        UnityEngine.Debug.Log("hit");
+        if (creature.gameObject.layer == 3){
+            GameObject.Find("/CatGameObject/" + creature.gameObject.name).GetComponent<MeshRenderer>().enabled = true;
+            Destroy(creature.gameObject);
+            GetComponent<AudioSource>().PlayOneShot(creatureSplash);
         }
     }
 }
